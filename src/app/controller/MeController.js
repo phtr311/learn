@@ -13,6 +13,18 @@ class MeController {
                 })
                 .catch(next);
         }
+
+        // [GET] /me/trash/courses
+        trashCourses(req, res,next) {
+            Course.findDeleted({})
+            .then(courses => {
+                courses = courses.map(course => {
+                    return course ? course.toObject() : course;
+                })
+                res.render('me/trash-Courses', {courses});
+            })
+            .catch(next);
+        }
 }
 
 module.exports = new MeController;

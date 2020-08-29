@@ -1,5 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars');
+const methodOverride = require('method-override');
 //  path: để chuyển vị trí default của thư mục views, đi kèm với câu lệnh ở dưới
 var path = require('path');
 const route = require('./routes/index');
@@ -16,7 +17,7 @@ app.use(express.urlencoded({
   extended: true
 }));
 app.use(express.json());
-
+app.use(methodOverride('_method'));
 // connect database
 db.connect();
 
