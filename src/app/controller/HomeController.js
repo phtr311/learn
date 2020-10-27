@@ -10,16 +10,6 @@ class HomeController {
                 res.render('home', { courses });
             })
             .catch(next);
-
-        // res.render('home');
-        // Course.find({}, function (err, Courses) {
-        //     if (!err) {
-        //         res.json(Courses);
-        //     }
-        //     else {
-        //         next(err);
-        //     }
-        // });
     }
 }
 

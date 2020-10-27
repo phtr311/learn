@@ -20,6 +20,7 @@ class CourseController {
 
     // [POST] /courses/store
     store(req, res, next) {
+        console.log(req.body);
         const formData = req.body;
         formData.image = 'https://img.youtube.com/vi/nB6cJh_bb1U/sddefault.jpg';
         const course = new Course(formData);
